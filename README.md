@@ -15,7 +15,8 @@
   <li>data.php(简单逻辑处理的后台数据)</li>
   <li>index.html(首页html代码+js的ajax逻辑处理)</li>
 </ul>
-### 一，基于ajax点击加载——loading_One.html
+
+###  一，基于ajax点击加载——loading_One.html
 ## 效果图 ##
 ![image](https://github.com/JB-Chen/ajax-json/blob/master/Public/img/git1.gif) 
 ***
