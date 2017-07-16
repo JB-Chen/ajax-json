@@ -1,0 +1,194 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8">
+<!-- <meta http-equiv="refresh" content="15,url=">   -->
+<title>ajax下拉加载</title>  
+<script src="./Public/js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="./Public/css/weui.min.css">  
+</head>
+<style type="text/css">
+    .loading{
+        width:100%;
+        height: 15px;
+        margin: auto;
+        padding-left: 45%;
+    }
+    .l{
+        width: 1%;
+        height: 8px;
+        background-color: green;
+        float: left;
+        margin-right: 5px;
+        margin-top: 3px;
+        
+    }
+    #l1{
+        animation:change 0.8s linear infinite alternate;
+    }
+    #l2{
+        animation:change 0.8s linear 0.1s infinite alternate;
+    }
+    #l3{
+        animation:change 0.8s linear 0.2s infinite alternate;
+    }
+    #l4{
+        animation:change 0.8s linear 0.3s infinite alternate;
+    }
+    @keyframes change{
+        0%,100%{
+            width: 1%;
+            height: 8px;
+        }
+        50%{
+            width: 1%;
+            height: 12px;
+        }
+    }
+</style>  
+<body>
+  <!-- 面板 -->
+   <div class="page__hd">
+<div class="weui-panel weui-panel_access">
+    <!-- 第一个栏目 -->
+    <div class="weui-panel__hd" style="border-bottom:1px solid #ECECEC">海贝栏目</div>
+    <div style="background-color:snow;" class="weui-panel__bd">
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频一</h4>
+                <p class="weui-media-box__desc">海贝宣传片</p>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频二</h4>
+                <p class="weui-media-box__desc">北理珠宣传片</p>
+            </div>
+        </a>
+    </div>
+    <!-- 第二个栏目 -->
+     <div class="weui-panel weui-panel_access">
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频一</h4>
+                <p class="weui-media-box__desc">海贝宣传片</p>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频二</h4>
+                <p class="weui-media-box__desc">北理珠宣传片</p>
+            </div>
+        </a>
+    </div>
+    <!-- 第三个 -->
+     <div class="weui-panel weui-panel_access">
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频一</h4>
+                <p class="weui-media-box__desc">海贝宣传片</p>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频二</h4>
+                <p class="weui-media-box__desc">北理珠宣传片</p>
+            </div>
+        </a>
+    </div>
+    <!-- 第四个栏目 -->
+     <div class="weui-panel weui-panel_access">
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频一</h4>
+                <p class="weui-media-box__desc">海贝宣传片</p>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="./Public/img/index.png" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">视频二</h4>
+                <p class="weui-media-box__desc">北理珠宣传片</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- 复制代码模块,直到有滚动条出现为止,为了达到测试目的 -->  
+</div>  
+</body>  
+</html>  
+<script>  
+window.onload = function(){
+    //自定义指针，指向加载条数
+    var next = 0;
+    var last = 2;
+    // 定义下拉显示数量
+    var length = 2;
+ //数据加载时期的gif加载图,用于提示用户数据正在加载!  
+var loadDiv = '<div class="loading"><div id="l1" class="l"></div><div class="l" id="l2"></div><div class="l" id="l3"></div><div class="l" id="l4"></div></div>';  
+//监听窗口的鼠标滚轮事件  
+$(window).scroll(function() {  
+    // alert($(window).height());
+//当滚轮滚动到文档最末位，也就是拉到了最底下  
+if( $(window).scrollTop() == $(document).height() - $(window).height() ) {  
+    //避免多次滚轮触发事件造成图片的多次追加，加上此判断  
+    if($('.page__hd .loading').length == 0) {  
+        //将图片插入到内部的内容最末位  
+        $('.page__hd').append(loadDiv);  
+    }  
+    //发送ajax请求获取数据  
+    $.ajax({  
+        type: "POST",  
+        url: "./data2.php",
+        data:{n:next,l:last}, 
+        success: function(data){  
+          //加载成功,移除用于提示用户的动态动画 
+          $('.page__hd .loading').remove();  
+          // //追加后端返回的数据
+            if(data != null){
+                data = eval('('+data+')');
+                //alert(data[0].src);
+                for(var i=0;i<length+1;i++){
+                      //alert(length);
+                      var src = data[i].src;
+                      var title = data[i].title;
+                      var content = data[i].content;
+                      var html = '<div class="weui-panel weui-panel_access"><a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="'+src+'" alt=""></div><div class="weui-media-box__bd"><h4 class="weui-media-box__title">'+title+'</h4><p class="weui-media-box__desc">'+content+'</p></div></a></div>';
+                      
+                       $('.page__hd').append(html);  
+                }
+            }  
+          
+        }  
+    });
+    next +=2;
+    last +=2;  
+}  
+});  
+}
+
+</script>  
